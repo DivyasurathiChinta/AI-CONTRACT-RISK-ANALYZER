@@ -1,0 +1,62 @@
+Step 1 — Open Terminal in the Project Folder
+Press Win + R → type powershell → navigate to the project:
+
+powershell
+cd "C:\Users\Divya\Desktop\contract risk analyzer"
+Step 2 — Create Virtual Environment
+powershell
+python -m venv venv
+Step 3 — Activate Virtual Environment
+powershell
+venv\Scripts\activate
+You'll see (venv) at the start of your terminal line — that means it's active ✅
+
+Step 4 — Install All Dependencies
+powershell
+pip install -r requirements.txt
+This takes 2–3 minutes the first time.
+
+Step 5 — Set Up Your API Key
+powershell
+copy .env.example .env
+Then open .env in VS Code and replace the placeholder:
+
+env
+GEMINI_API_KEY=your_actual_key_here   ← change this line only
+🔑 Get a free Gemini API key at: https://aistudio.google.com/app/apikey
+
+Step 6 — Start the Backend (Terminal 1)
+powershell
+python run.py
+You should see:
+
+╔══════════════════════════════════════╗
+║   🤖  AI CONTRACT RISK ANALYZER     ║
+╚══════════════════════════════════════╝
+  Backend API  →  http://localhost:8000
+  API Docs     →  http://localhost:8000/docs
+🚀 Starting backend on http://0.0.0.0:8000
+Step 7 — Start the Frontend (Terminal 2)
+Open a new terminal, then:
+
+powershell
+cd "C:\Users\Divya\Desktop\contract risk analyzer"
+venv\Scripts\activate
+streamlit run frontend/streamlit_app.py
+Browser opens automatically at http://localhost:8501 🎉
+
+✅ Quick Checklist
+What to check
+✅	(venv) visible in terminal
+✅	pip install -r requirements.txt completed without errors
+✅	.env file exists (not just .env.example)
+✅	Real Gemini API key in .env
+✅	Backend running on port 8000
+✅	Frontend running on port 8501
+❗ Common Issues & Fixes
+Error	Fix
+'venv' is not recognized	Make sure Python is installed: python --version
+ModuleNotFoundError	You forgot to activate venv, or run pip install -r requirements.txt
+GEMINI_API_KEY not configured	Open .env and paste your actual key
+Address already in use	Port 8000 busy — run python run.py --port 9000
+Connection refused in Streamlit	Backend isn't running — check Terminal 1

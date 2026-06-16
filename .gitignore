@@ -1,0 +1,63 @@
+# ============================================================
+# .gitignore for AI Contract Risk Analyzer
+# ============================================================
+
+# Environment & Secrets (NEVER commit these)
+.env
+*.env
+.env.local
+.env.production
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+.env/
+
+# Uploads (user data — sensitive legal documents)
+uploads/
+*.pdf
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Streamlit
+.streamlit/
+
+# PyMuPDF cache
+*.fitz
+
+# Distribution
+*.whl
+*.tar.gz
